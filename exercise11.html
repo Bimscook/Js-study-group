@@ -1,16 +1,25 @@
-<!doctype html><html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercise 11 - Simple Data - JavaScript Explained</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 11 - Reusable Code - JavaScript Explained</title>
   </head>
   <body>
-    <h1>Simple Data Exercises</h1>
+    <h1>Reusable Code Exercises</h1>
     <p>Open the web inspector console to test.</p>
-  
+  </body>
   <script>
-    const headerTitle = `New Title`;
-    const myHeader = `<h1>${headerTitle}</h1>`;
-    console.log(myHeader);
+    function logIn() {
+   const password = prompt(`Please enter your password`);
+   if (password === `password`) {
+    alert(`Thank you! You are logged in!`);
+   }else{
+    alert(`Incorrect, please try again!`);
+   }
+ }
+ logIn();
+
   </script>
-</body></html>
+</html>
