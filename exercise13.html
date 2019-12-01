@@ -4,27 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 13 - Reusable Code - JavaScript Explained</title>
+    <title>Exercise 13 - The Browser API - JavaScript Explained</title>
   </head>
   <body>
-    <h1>Reusable Code Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <div id="app">
+      <h1>The Browser API Exercises</h1>
+      <p>Open the web inspector console to test.</p>
+    </div>
   </body>
   <script>
-    function init() {
-      const loggedIn = getLogin();
-      console.log(loggedIn);
-    }
-    init();
-   function getLogin() {
-      const password = prompt(`Please enter password`);
-      if (password === `password`) {
-        alert(`Thank you! You are Logged In!`);
-        return true;
-      } else {
-        alert(`Incorrect, please try again!`);
-        return false;
-      }
-    }
+    const staticHeader = () => `<h2>Static Header</h2>`;
+    console.log(staticHeader());
   </script>
 </html>

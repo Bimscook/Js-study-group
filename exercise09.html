@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 9 - Reusable Code - JavaScript Explained</title>
+    <title>Exercise 9 - The Browser API - JavaScript Explained</title>
   </head>
   <body>
-    <h1>Reusable Code Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <div id="container">
+      <h1><a href="#">The Browser API Exercises</a></h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+      <ul>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+    </div>
   </body>
   <script>
-     function askFullName() {
-      const first = prompt(`Please enter your first name`);
-      const last = prompt(`Please enter your first name`);
-      return `${first} ${last}`;
-    }
-    console.log(askFullName());
+    const links = document.querySelectorAll(`a`);
+    console.log(links);
   </script>
 </html>

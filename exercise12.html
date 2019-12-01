@@ -4,23 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 12 - Reusable Code - JavaScript Explained</title>
+    <title>Exercise 12 - The Browser API - JavaScript Explained</title>
   </head>
+  <style>
+    .menu {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .menu li {
+      list-style: none;
+    }
+    #container {
+      text-align: center;
+    }
+  </style>
   <body>
-    <h1>Reusable Code Exercises</h1>
-    <p>Open the web inspector console to test.</p>
+    <nav class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </nav>
+    <div id="container">
+      <h1><a href="#">The Browser API Exercises</a></h1>
+      <p>Open the <a href="#">web inspector</a> console to test.</p>
+    </div>
   </body>
   <script>
-    function getLogin() {
-      const password = prompt(`Please enter password`);
-      if (password === `password`) {
-        alert(`Thank you! You are Logged In!`);
-        return true;
-      } else {
-        alert(`Incorrect, please try again!`);
-        return false;
-      }
-    }
-    console.log(getLogin());
+    const menuLinks = Array.from(document.querySelectorAll(`.menu li a`));
+    menuLinks.map(link => {
+      console.log(link.innerText);
+    });
   </script>
 </html>

@@ -4,36 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Exercise 27 - Reusable Code - JavaScript Explained</title>
+    <title>Exercise 27 - The Browser API - JavaScript Explained</title>
   </head>
   <body>
-    <h1>Reusable Code Exercises</h1>
+    <h1>The Browser API Exercises</h1>
     <p>Open the web inspector console to test.</p>
+    <div class="video-player">
+      <video controls>
+        <source
+          src="https://dzwonsemrish7.cloudfront.net/items/3C350y3F3e47332u1x1T/demo-video.mp4"
+          type="video/mp4"
+        />
+        Sorry, your browser doesn't support embedded videos :(
+      </video>
+      <p>
+        <input id="play" type="submit" value="Play" />
+        <input id="pause" type="submit" value="Pause" />
+      </p>
+    </div>
   </body>
   <script>
-    const getArticleMarkup = (title, url, excerpt, author) => {
-      let markup = getHeaderLinkMarkup(title, url);
-      markup += getExcerptMarkup(excerpt);
-      markup += getAuthorMarkup(author);
-      return markup;
-    };
-    console.log(
-      getArticleMarkup(
-        `JavaScript Explained`,
-        `https://javascriptexplained.com`,
-        `A practical guide to getting up and running with JavaScript quickly and easily.`,
-        `Zac Gordon`
-      )
-    );
-    const getExcerptMarkup = excerpt =>
-      `<div class="excerpt"><p>${excerpt}</p></div>`;
-    const getAuthorMarkup = author => `<p>By: ${author}</p>`;
-    const getHeaderLinkMarkup = (title, url) => {
-      const link = getMyLinkMarkup(title, url);
-      const header = getMyHeaderMarkup(link);
-      return header;
-    };
-    const getMyLinkMarkup = (title, url) => `<a href="${url}">${title}</a>`;
-    const getMyHeaderMarkup = title => `<h1>${title}</h1>`;
+    const video = document.querySelector(`video`);
+    const playButton = document.querySelector(`#play`);
+    const pauseButton = document.querySelector(`#pause`);
+
+    function playVideo(e) {
+      video.play();
+    }
+
+    function pauseVideo(e) {
+      video.pause();
+    }
+
+    playButton.addEventListener(`click`, playVideo);
+    pauseButton.addEventListener(`click`, pauseVideo);
   </script>
 </html>
